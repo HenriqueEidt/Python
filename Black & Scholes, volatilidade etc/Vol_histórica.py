@@ -24,10 +24,10 @@ def vol_const(stock,begin,end):
 
     S = math.sqrt(termo_1-termo_2)
 
-    print(termo_1)
-    print(termo_2)
+    print(df)
+    print('--------------------------------------------------')
     print('Estimativa da vol diária {}'.format(S))
     print('Estimativa da vol anual {}'.format(S*math.sqrt(252)))
+    
 
-
-vol_const('CYRE3.sa',begin='03-01-2021',end='03-24-2021')
+vol_const('CYRE3.sa',begin='02-24-2021',end='03-24-2021')
