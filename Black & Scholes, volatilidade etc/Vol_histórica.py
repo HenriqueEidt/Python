@@ -5,6 +5,9 @@ import pandas_datareader as web
 import math
 
 #Determinação da volatilidade histórica toma como base o adj close e leva em conta apenas os dias negociados. A vol anual considera 252 dias
+#Nessa formulação a média NÃO é tomada como 0
+#Considera-se M-1 e não apenas M
+#Leva-se em conta o log retorno, não o retorno simples
 def vol_const(stock,begin,end):
     df = web.DataReader(stock,'yahoo',begin,end)
     df = df['Adj Close']
@@ -29,5 +32,9 @@ def vol_const(stock,begin,end):
     print('Estimativa da vol diária {}'.format(S))
     print('Estimativa da vol anual {}'.format(S*math.sqrt(252)))
     
-
 vol_const('CYRE3.sa',begin='02-24-2021',end='03-24-2021')
+
+
+
+
+
